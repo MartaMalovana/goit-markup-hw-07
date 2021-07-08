@@ -1,0 +1,94 @@
+  header {
+    border-bottom: 1px solid #ececec;
+  }
+
+  /*site-nav*/
+.site-nav {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+  
+  .site-nav-list {
+    display: flex;
+    padding-left: 0px;
+
+   & .item:not(:last-child) {
+        margin-right: 50px;
+      }  
+   & .link {
+        display: inline-block;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        color: var(--secondary-text-color);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.14;
+        transition: color 250ms;
+
+        &.current::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background-color: var(--accent-text-color);
+            position: absolute;
+            bottom: 0;
+          }
+      }
+  
+   & .link:hover,
+   &.link:focus,
+   & .link.current  {
+    color: var(--accent-text-color);
+  }
+    
+   & .item {
+    position: relative;
+  }
+  }
+ 
+/*contacts*/
+.contacts .link {
+  display: inline-block;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.14;
+  transition: color 250ms;
+}
+
+.contacts .contacts-list:not(:last-child) {
+  margin-right: 30px;
+}
+
+.contacts-list .link:hover,
+.contacts-list .link:focus,
+.contacts-list .link:hover .icon-mail,
+.contacts-list .link:focus .icon-mail,
+.contacts-list .link:hover .icon-tel,
+.contacts-list .link:focus .icon-tel {
+  color: var(--accent-text-color);
+  fill: var(--accent-text-color);
+  transition: var(--cubic);
+}
+
+.contacts-list .icon-mail,
+.contacts-list .icon-tel {
+  fill: var(--primary-text-color);
+  margin-right: 10px;
+  transition: fill 250ms;
+}
+
+.contacts-list .link {
+  display: flex;
+  align-items: center;
+}
+  
