@@ -15,18 +15,19 @@
     background-color: #c4c4c4;
     color: var(--white-color);
     letter-spacing: 0.06em;
+
+    &__title {
+      text-align: center;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin: 0 auto 30px;
+      max-width: 696px;
+      height: 120px;
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.36;
+    }
   }
   
-  .hero__title {
-    text-align: center;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin: 0 auto 30px;
-    max-width: 696px;
-    height: 120px;
-    font-size: 44px;
-    font-weight: 900;
-    line-height: 1.36;
-  }
-  
+
   
