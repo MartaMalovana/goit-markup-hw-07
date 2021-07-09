@@ -1,5 +1,5 @@
 /*Кнопка Героя*/
-.hero .button {
+.hero__button {
     display: block;
     padding: 10px 30px;
     margin-right: auto;
@@ -21,14 +21,14 @@
     transition: background-color 250ms;
   }   
 
-.button:hover,
-.button:focus {
+.hero__button:hover,
+.hero__button:focus {
   background-color: #188ce8;
   transform: var(--cubic);
 }
 
 /*Кнопка в футере*/
-form button {
+.sign-form__button {
     min-width: 200px;
     min-height: 50px;
     border-radius: 4px;
@@ -47,8 +47,13 @@ form button {
     justify-content: center;
   }
 
+  .sign-form__icon {
+    margin-left: 10px;
+    fill: var(--white-color);
+  }
+
   /*Кнопка портфолио*/
-  .filters .button {
+  .filters-list__button {
     text-align: center;
     height: 38px;
     padding: 6px 22px;
@@ -65,9 +70,9 @@ form button {
     transition: color 250ms, background-color 250ms, box-shadow 250ms;
   }
   
-  .filters .button:hover,
-  .filters .button:focus,
-  .filters .button.current {
+  .filters-list__button:hover,
+  .filters-list__button:focus,
+  .filters-list__button--current {
     color: var(--white-color);
     background-color: var(--accent-text-color);
     box-shadow: 0 2px rgba(0, 0, 0, 0.12), 0 1px rgba(0, 0, 0, 0.08),
@@ -85,7 +90,7 @@ form button {
     letter-spacing: 00.03em;
   }
   /*Кнопки модального окна*/
-.modal .button {
+.modal__button {
     position: absolute;
     display: flex;
     align-items: center;
@@ -99,14 +104,14 @@ form button {
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: none;
     background-color: var(--white-color);
+
+    &:hover,
+    &:focus {
+       fill: var(--accent-text-color);
+   }
 }
 
-.modal .button:hover,
-.modal .button:focus {
-  fill: var(--accent-text-color);
-}
- 
-.form-field button {
+.modal__submit-button {
     background-color: var(--accent-text-color);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -118,5 +123,7 @@ form button {
     letter-spacing: 0.06em;
     margin-left: auto;
     margin-right: auto;
+    display: block;
+
   }
   

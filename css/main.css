@@ -22,25 +22,24 @@ body {
   padding-right: 15px;
   margin: 0px auto;
 }
-.container .contacts {
-  display: flex;
-  padding-left: 0px;
-  margin: 0px 0px 0px auto;
-}
-header .container {
+
+.container--header {
   display: flex;
   justify-content: flex-start;
   height: 80px;
   align-items: center;
 }
-.hero .container {
+
+.container--hero {
   padding-top: 200px;
   margin: 0 auto;
 }
-.advantages .container {
+
+.container--advantages {
   margin-bottom: 94px;
 }
-footer .container {
+
+.container--footer {
   display: flex;
   padding-top: 60px;
 }
@@ -64,10 +63,10 @@ header {
   display: flex;
   padding-left: 0px;
 }
-.site-nav-list .item:not(:last-child) {
+.site-nav-list__item:not(:last-child) {
   margin-right: 50px;
 }
-.site-nav-list .link {
+.site-nav-list__link {
   display: inline-block;
   margin-top: 32px;
   margin-bottom: 32px;
@@ -79,7 +78,7 @@ header {
   line-height: 1.14;
   transition: color 250ms;
 }
-.site-nav-list .link.current::after {
+.site-nav-list__link--current::after {
   content: "";
   display: block;
   width: 100%;
@@ -89,15 +88,15 @@ header {
   position: absolute;
   bottom: 0;
 }
-.site-nav-list .link:hover, .site-nav-list.link:focus, .site-nav-list .link.current {
+.site-nav-list__link:hover, .site-nav-list__link:focus, .site-nav-list__link.current {
   color: var(--accent-text-color);
 }
-.site-nav-list .item {
+.site-nav-list__item {
   position: relative;
 }
 
 /*contacts*/
-.contacts .link {
+.contacts__link {
   display: inline-block;
   margin-top: 32px;
   margin-bottom: 32px;
@@ -108,33 +107,36 @@ header {
   font-weight: 500;
   line-height: 1.14;
   transition: color 250ms;
+  display: flex;
+  align-items: center;
 }
 
-.contacts .contacts-list:not(:last-child) {
+.contacts {
+  display: flex;
+  padding-left: 0px;
+  margin: 0px 0px 0px auto;
+}
+
+.contacts__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.contacts-list .link:hover,
-.contacts-list .link:focus,
-.contacts-list .link:hover .icon-mail,
-.contacts-list .link:focus .icon-mail,
-.contacts-list .link:hover .icon-tel,
-.contacts-list .link:focus .icon-tel {
+.contacts__link:hover,
+.contacts__link:focus,
+.contacts__link:hover .contacts__icon-mail,
+.contacts__link:focus .contacts__icon-mail,
+.contacts__link:hover .contacts__icon-tel,
+.contacts__link:focus .contacts__icon-tel {
   color: var(--accent-text-color);
   fill: var(--accent-text-color);
   transition: var(--cubic);
 }
 
-.contacts-list .icon-mail,
-.contacts-list .icon-tel {
+.contacts__icon-mail,
+.contacts__icon-tel {
   fill: var(--primary-text-color);
   margin-right: 10px;
   transition: fill 250ms;
-}
-
-.contacts-list .link {
-  display: flex;
-  align-items: center;
 }
 
 /*Лого хедер*/
@@ -152,12 +154,12 @@ header {
   line-height: 1.19;
 }
 
-.logo-web {
+.logo__web {
   color: var(--accent-text-color);
 }
 
 /*Лого футер*/
-footer .logo {
+.address__logo {
   margin-top: 0px;
   margin-bottom: 20px;
   margin-right: auto;
@@ -179,7 +181,7 @@ footer .logo {
   letter-spacing: 0.06em;
 }
 
-.hero-title {
+.hero__title {
   text-align: center;
   padding-right: 20px;
   padding-left: 20px;
@@ -192,7 +194,7 @@ footer .logo {
 }
 
 /*Кнопка Героя*/
-.hero .button {
+.hero__button {
   display: block;
   padding: 10px 30px;
   margin-right: auto;
@@ -214,14 +216,14 @@ footer .logo {
   transition: background-color 250ms;
 }
 
-.button:hover,
-.button:focus {
+.hero__button:hover,
+.hero__button:focus {
   background-color: #188ce8;
   transform: var(--cubic);
 }
 
 /*Кнопка в футере*/
-form button {
+.sign-form__button {
   min-width: 200px;
   min-height: 50px;
   border-radius: 4px;
@@ -240,8 +242,13 @@ form button {
   justify-content: center;
 }
 
+.sign-form__icon {
+  margin-left: 10px;
+  fill: var(--white-color);
+}
+
 /*Кнопка портфолио*/
-.filters .button {
+.filters-list__button {
   text-align: center;
   height: 38px;
   padding: 6px 22px;
@@ -258,9 +265,9 @@ form button {
   transition: color 250ms, background-color 250ms, box-shadow 250ms;
 }
 
-.filters .button:hover,
-.filters .button:focus,
-.filters .button.current {
+.filters-list__button:hover,
+.filters-list__button:focus,
+.filters-list__button--current {
   color: var(--white-color);
   background-color: var(--accent-text-color);
   box-shadow: 0 2px rgba(0, 0, 0, 0.12), 0 1px rgba(0, 0, 0, 0.08), 0 3px rgba(0, 0, 0, 0.1);
@@ -278,7 +285,7 @@ form button {
 }
 
 /*Кнопки модального окна*/
-.modal .button {
+.modal__button {
   position: absolute;
   display: flex;
   align-items: center;
@@ -293,13 +300,11 @@ form button {
   box-shadow: none;
   background-color: var(--white-color);
 }
-
-.modal .button:hover,
-.modal .button:focus {
+.modal__button:hover, .modal__button:focus {
   fill: var(--accent-text-color);
 }
 
-.form-field button {
+.modal__submit-button {
   background-color: var(--accent-text-color);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -311,6 +316,7 @@ form button {
   letter-spacing: 0.06em;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 /*advantages*/
@@ -327,11 +333,11 @@ form button {
   text-transform: uppercase;
 }
 
-.advantages-item:not(:last-child) {
+.advantages-list__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.advantages-item .icon {
+.advantages-list__icon {
   width: 270px;
   height: 120px;
   background-color: var(--filters-background-color);
@@ -339,15 +345,6 @@ form button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.advantages-text {
-  width: 270px;
-  height: 75px;
-  margin: 0px;
-  text-align: left;
-  font-size: 14px;
-  line-height: 1.71;
 }
 
 .advantages-list {
@@ -360,8 +357,17 @@ form button {
   padding-top: 94px;
 }
 
+.advantages-list__text {
+  width: 270px;
+  height: 75px;
+  margin: 0px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
 /*sevices*/
-.services-title {
+.services__title {
   text-align: center;
   width: 376px;
   height: 42px;
@@ -374,7 +380,7 @@ form button {
   line-height: 1.17;
 }
 
-.services-list {
+.services__list {
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -383,19 +389,20 @@ form button {
   padding: 0px;
 }
 
-.services-item {
+.services__item {
   margin-right: 30px;
   padding: 0px;
   width: 370px;
   height: 294px;
   position: relative;
 }
-.services-item img {
+.services__item:last-child {
+  margin-right: 0px;
+}
+
+.services__image {
   height: 294px;
   width: 370px;
-}
-.services-item:last-child {
-  margin-right: 0px;
 }
 
 .label {
@@ -435,7 +442,7 @@ form button {
   padding-top: 94px;
 }
 
-.team-member {
+.team__member-name {
   margin-top: 0px;
   margin-bottom: 10px;
   margin-right: auto;
@@ -455,7 +462,34 @@ form button {
   box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
-.profession {
+.team__title {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  color: var(--secondary-text-color);
+  font-size: 36px;
+  line-height: 1.17;
+}
+
+.team__list {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 94px;
+  padding-left: 0px;
+}
+
+.team__item {
+  background-color: var(--white-color);
+}
+
+.team__member-photo {
+  margin-bottom: 30px;
+}
+
+.team__member-profession {
   text-align: center;
   margin-top: 0px;
   margin-right: auto;
@@ -466,42 +500,11 @@ form button {
   line-height: 1.19;
 }
 
-.team-title {
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 50px;
-  color: var(--secondary-text-color);
-  font-size: 36px;
-  line-height: 1.17;
-}
-
-.team-list {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 94px;
-  padding-left: 0px;
-}
-.team-list figure {
-  margin-top: 0px;
-  margin-right: 30px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-}
-.team-list img {
-  margin-bottom: 30px;
-}
-.team-list .team-item {
-  background-color: var(--white-color);
-}
-
 .clients {
   padding-top: 94px;
 }
 
-.clients-title {
+.clients__title {
   margin: 0 auto 50px;
   text-align: center;
   color: var(--secondary-text-color);
@@ -510,7 +513,7 @@ form button {
   line-height: 1.17;
 }
 
-.clients-list {
+.clients__list {
   display: flex;
   margin-top: 0;
   margin: 0 auto 94px;
@@ -518,7 +521,7 @@ form button {
   justify-content: center;
 }
 
-.company-link {
+.clients__link {
   width: 170px;
   height: 92px;
   border: 1px solid #afb1b8;
@@ -530,13 +533,13 @@ form button {
   fill: #afb1b8;
   transition: fill 250ms;
 }
-.company-link:hover, .company-link:focus {
+.clients__link:hover, .clients__link:focus {
   fill: var(--accent-text-color);
   border-color: var(--accent-text-color);
   transform: var(--cubic);
 }
 
-.clients-item:last-child {
+.clients__item:last-child {
   margin-right: 0;
 }
 
@@ -545,7 +548,23 @@ footer {
   background-color: var(--dark-background-color);
   color: var(--white-color);
 }
-footer .link {
+
+.footer-contacts {
+  margin-right: 70px;
+}
+
+.connect__title,
+.sign-form__title {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.17;
+  margin-bottom: 20px;
+  margin-top: 12px;
+  letter-spacing: 0.03em;
+}
+
+.address__link {
   text-align: left;
   text-decoration: none;
   color: inherit;
@@ -554,14 +573,51 @@ footer .link {
   line-height: 1.71;
   transition: color 250ms;
 }
-footer .link:hover, footer .link:focus {
+
+.address__post-address {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.address,
+.address__item--style {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-style: normal;
+}
+
+.address__item--style:hover,
+.address__item--style:focus {
   color: var(--accent-text-color);
   transform: var(--cubic);
 }
-footer form {
+
+.address__list {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.address__item {
+  margin-bottom: 9px;
+  color: var(--white-color);
+  display: inline-block;
+  min-width: 100%;
+}
+.address__item:last-child {
+  margin-bottom: 0px;
+  padding-bottom: 60px;
+}
+
+.sign-form {
   margin-left: 93px;
 }
-footer input {
+
+.sign-form__input {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -575,58 +631,23 @@ footer input {
   padding-left: 16px;
 }
 
-.address-list {
-  margin-right: 70px;
-}
-
-.connect h3,
-form h3 {
-  font-weight: 700;
+.address__item--style {
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
   font-size: 14px;
-  text-transform: uppercase;
-  line-height: 1.17;
-  margin-bottom: 20px;
-  margin-top: 12px;
-  letter-spacing: 0.03em;
+  font-weight: 400;
+  line-height: 1.71;
+  transition: color 250ms;
 }
 
-.address {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-style: normal;
-}
-
-.address-item {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  padding-left: 0px;
-}
-
-.address-item .address-list {
-  margin-bottom: 9px;
-}
-.address-item .address-list:last-child {
-  margin-bottom: 0px;
-  padding-bottom: 60px;
-}
-
-.address-list.contact {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-form .sign-up {
+.sign-form__block {
   display: flex;
   justify-content: center;
 }
 
-form .signup {
-  margin-left: 10px;
-  fill: var(--white-color);
-}
-
 /*filters portfolio*/
-.filters {
+.filters-list {
   display: flex;
   justify-content: center;
   padding-top: 94px;
@@ -636,15 +657,13 @@ form .signup {
   margin-bottom: 0px;
 }
 
-.filters-list {
+.filters-list__item {
   margin-right: 8px;
 }
-
-.filters-list:last-child {
+.filters-list__item:last-child {
   margin-right: 0px;
 }
 
-/*portfolio*/
 .portfolio {
   display: flex;
   flex-wrap: wrap;
@@ -657,12 +676,12 @@ form .signup {
   margin-bottom: 94px;
 }
 
-.portfolio img {
+.portfolio__image {
   width: 370px;
   height: 294px;
 }
 
-.portfolio li {
+.portfolio__item {
   background-color: var(--white-color);
   width: 370px;
   height: 404px;
@@ -670,7 +689,7 @@ form .signup {
   margin-bottom: 30px;
 }
 
-.portfolio .title {
+.portfolio__title {
   text-align: left;
   margin-top: 20px;
   margin-bottom: 0px;
@@ -682,13 +701,13 @@ form .signup {
   letter-spacing: 0.06em;
 }
 
-.portfolio p {
+.portfolio__description {
   text-align: left;
   font-size: 16px;
   line-height: 1.88;
 }
 
-a.portfolio-item {
+.portfolio__link {
   display: inline-block;
   width: 370px;
   height: 404px;
@@ -696,30 +715,28 @@ a.portfolio-item {
   text-decoration: none;
   color: inherit;
 }
-
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio__link:hover, .portfolio__link:focus {
   box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.06), 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
 
-.portfolio-item .description {
+.portfolio__description {
   margin: 4px 24px 20px;
 }
 
-.portfolio li:nth-child(3n) {
+.portfolio__item:nth-child(3n) {
   margin-right: 0px;
 }
 
-.portfolio li:nth-last-child(-n+3) {
+.portfolio__item:nth-last-child(-n+3) {
   margin-bottom: 0px;
 }
 
-.overlay {
+.portfolio__overlay {
   position: relative;
   overflow: hidden;
 }
 
-.overlay-text {
+.portfolio__text {
   position: absolute;
   content: "";
   bottom: -100%;
@@ -735,7 +752,7 @@ a.portfolio-item {
   transition: bottom 250ms;
 }
 
-.portfolio-item:hover .overlay-text {
+.portfolio__item:hover .portfolio__text {
   bottom: 0;
   transform: var(--cubic);
 }
@@ -748,7 +765,8 @@ a.portfolio-item {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
-.backdrop.is-hidden {
+
+.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -766,13 +784,32 @@ a.portfolio-item {
   border-radius: 4px;
 }
 
-.form-field {
+.modal__form-field {
   padding: 40px;
   font-size: 12px;
   line-height: 1.172;
   letter-spacing: 0.01em;
 }
-.form-field input {
+
+.modal__title {
+  font-size: 20px;
+  line-height: 1.172;
+  color: var(--secondary-text-color);
+  text-transform: none;
+  text-align: center;
+  margin: 0 auto 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.modal__field-input {
+  display: block;
+  position: relative;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.modal__input {
   min-width: 448px;
   min-height: 40px;
   padding-left: 42px;
@@ -782,7 +819,18 @@ a.portfolio-item {
   outline: none;
   transition: border-color 250ms;
 }
-.form-field textarea {
+
+.modal__input:focus,
+.modal__textarea:focus {
+  border-color: var(--accent-text-color);
+  transform: var(--cubic);
+}
+
+.modal__input:focus + .modal__icon {
+  fill: var(--accent-text-color);
+}
+
+.modal__textarea {
   min-width: 448px;
   min-height: 120px;
   margin-top: 4px;
@@ -794,55 +842,33 @@ a.portfolio-item {
   outline: none;
   transition: border-color 250ms;
 }
-.form-field textarea::-moz-placeholder {
+
+.modal__textarea::-moz-placeholder {
   color: rgba(117, 117, 117, 0.5);
-}
-.form-field textarea:-ms-input-placeholder {
-  color: rgba(117, 117, 117, 0.5);
-}
-.form-field textarea::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-}
-.form-field p {
-  font-size: 20px;
-  line-height: 1.172;
-  color: var(--secondary-text-color);
-  text-transform: none;
-  text-align: center;
-  margin: 0 auto 12px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-.form-field input:focus, .form-field textarea:focus {
-  border-color: var(--accent-text-color);
-  transform: var(--cubic);
-}
-.form-field input:focus + .icon {
-  fill: var(--accent-text-color);
 }
 
-.field-input {
-  display: block;
-  position: relative;
-  margin-top: 4px;
-  margin-bottom: 10px;
+.modal__textarea:-ms-input-placeholder {
+  color: rgba(117, 117, 117, 0.5);
 }
-.field-input:focus + .field {
+
+.modal__textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal__field-input:focus + .modal__input {
   border: 1px solid var(--accent-text-color);
   transform: var(--cubic);
   background-color: var(--accent-text-color);
 }
 
-label .name,
-label .telephone,
-label .email {
+.modal__icon {
   position: absolute;
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.accept {
+.modal__accept {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -853,7 +879,7 @@ label .email {
   overflow: hidden;
 }
 
-.customer-accept {
+.modal__customer-accept {
   display: block;
   align-items: center;
   font-size: 14px;
@@ -862,7 +888,7 @@ label .email {
   margin-bottom: 30px;
   position: relative;
 }
-.customer-accept .text {
+.modal__customer-accept .modal__accept-text {
   color: var(--primary-text-color);
   margin: 0px;
   font-size: 14px;
@@ -870,7 +896,7 @@ label .email {
   line-height: 1.714;
   letter-spacing: 0.03em;
 }
-.customer-accept .check-icon {
+.modal__customer-accept .modal__check-icon {
   display: block;
   background-color: var(--white-color);
   border: 2px solid var(--secondary-text-color);
@@ -878,18 +904,19 @@ label .email {
   margin-right: 8.38px;
   transition: background-color 250ms;
 }
-.customer-accept .checkbox {
+.modal__customer-accept .modal__checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
 }
-.customer-accept a {
+
+.modal__accept-link {
   color: var(--accent-text-color);
   margin: 0 0 0 3px;
 }
 
-.accept:checked + .check-icon {
+.modal__accept:checked + .modal__check-icon {
   background-color: var(--accent-text-color);
   background-origin: border-box;
   border-color: var(--accent-text-color);
@@ -903,15 +930,16 @@ label .email {
   justify-content: center;
   padding-bottom: 30px;
 }
-.social-links li:not(:last-child) {
+
+.social-links__item:not(:last-child) {
   margin-right: 10px;
 }
 
-.social-icon {
+.social-links__icon {
   fill: #afb1b8;
 }
 
-.link-list {
+.social-links__link {
   display: block;
   width: 44px;
   height: 44px;
@@ -921,31 +949,31 @@ label .email {
   border-radius: 50%;
   transition: background-color 250ms;
 }
-.link-list:hover, .link-list:focus {
+.social-links__link:hover, .social-links__link:focus {
   background-color: var(--accent-text-color);
   transform: var(--cubic);
 }
-.link-list:hover .social-icon, .link-list:focus .social-icon {
+.social-links__link:hover .social-links__icon, .social-links__link:focus .social-links__icon {
   fill: var(--white-color);
 }
 
 /*Список соц-сетей в Футере*/
-.connect .social-links {
+.social-links {
   margin: 0;
 }
 
-.connect .link-list {
+.social-links__link {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   transition: background-color 250ms;
 }
 
-.connect .social-icon {
+.social-links__icon {
   fill: var(--white-color);
 }
 
-.link-list:hover,
-.link-list:focus {
+.social-links__link:hover,
+.social-links__link:focus {
   background-color: var(--accent-text-color);
   transform: var(--cubic);
 }/*# sourceMappingURL=main.css.map */

@@ -5,14 +5,14 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-
-    &.is-hidden {
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-      }
   }
   
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
 .modal {
     position: absolute;
     top: 50%;
@@ -31,80 +31,75 @@
     font-size: 12px;
     line-height: 1.172;
     letter-spacing: 0.01em;
-
-    & input {
-        min-width: 448px;
-        min-height: 40px;
-        padding-left: 42px;
-        border: 1px solid rgba(33, 33, 33, 0.2);
-        border-radius: 4px;
-        transition: border 250ms;
-        outline: none;
-        transition: border-color 250ms;
-      }
-
-    & textarea {
-        min-width: 448px;
-        min-height: 120px;
-        margin-top: 4px;
-        margin-bottom: 20px;
-        padding: 12px 16px;
-        resize: none;
-        border: 1px solid rgba(33, 33, 33, 0.2);
-        border-radius: 4px;
-        outline: none;
-        transition: border-color 250ms;
-      }
-      
-      & textarea::placeholder {
-        color: rgba(117, 117, 117, 0.5);
-      }
-
-    & p {
-        font-size: 20px;
-        line-height: 1.172;
-        color: var(--secondary-text-color);
-        text-transform: none;
-        text-align: center;
-        margin: 0 auto 12px;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-      }
-
-    & input:focus,
-    & textarea:focus {
-        border-color: var(--accent-text-color);
-        transform: var(--cubic);
-      }
-      
-    & input:focus + .icon {
-        fill: var(--accent-text-color);
-      }
   }
-  
+
+.modal__title {
+    font-size: 20px;
+    line-height: 1.172;
+    color: var(--secondary-text-color);
+    text-transform: none;
+    text-align: center;
+    margin: 0 auto 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
 .modal__field-input {
     display: block;
     position: relative;
     margin-top: 4px;
     margin-bottom: 10px;
-
-    &:focus + .field {
-        border: 1px solid var(--accent-text-color);
-        transform: var(--cubic);
-        background-color: var(--accent-text-color);
-    } 
 }
  
-label .name,
-label .telephone,
-label .email {
+.modal__input {
+  min-width: 448px;
+  min-height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border 250ms;
+  outline: none;
+  transition: border-color 250ms;
+}
+
+.modal__input:focus,
+.modal__textarea:focus {
+        border-color: var(--accent-text-color);
+        transform: var(--cubic);
+      }
+      
+.modal__input:focus + .modal__icon {
+        fill: var(--accent-text-color);
+      }
+.modal__textarea {
+  min-width: 448px;
+  min-height: 120px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms;
+}
+.modal__textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.modal__field-input:focus + .modal__input {
+  border: 1px solid var(--accent-text-color);
+  transform: var(--cubic);
+  background-color: var(--accent-text-color);
+}
+
+.modal__icon {
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
   }
   
-.accept {
+.modal__accept {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -115,7 +110,7 @@ label .email {
     overflow: hidden;
   }
   
-.customer-accept {
+.modal__customer-accept {
     display: block;
     align-items: center;
     font-size: 14px;
@@ -123,8 +118,8 @@ label .email {
     letter-spacing: 0.03em;
     margin-bottom: 30px;
     position: relative;
-
-    & .text {
+   
+ .modal__accept-text {
         color: var(--primary-text-color);
         margin: 0px;
         font-size: 14px;
@@ -133,29 +128,28 @@ label .email {
         letter-spacing: 0.03em;
     }
 
-    & .check-icon {
-        display: block;
-        background-color: var(--white-color);
-        border: 2px solid var(--secondary-text-color);
-        border-radius: 2px;
-        margin-right: 8.38px;
-        transition: background-color 250ms;
-      }
-      
-    & .checkbox {
+.modal__check-icon {
+      display: block;
+      background-color: var(--white-color);
+      border: 2px solid var(--secondary-text-color);
+      border-radius: 2px;
+      margin-right: 8.38px;
+      transition: background-color 250ms;
+    }
+.modal__checkbox {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row-reverse;
       }
-      
-    & a {
-        color: var(--accent-text-color);
-        margin: 0 0 0 3px;
-      } 
   }
  
-  .accept:checked + .check-icon {
+  .modal__accept-link {
+    color: var(--accent-text-color);
+    margin: 0 0 0 3px;
+  } 
+
+  .modal__accept:checked + .modal__check-icon {
     background-color: var(--accent-text-color);
     background-origin: border-box;
     border-color: var(--accent-text-color);

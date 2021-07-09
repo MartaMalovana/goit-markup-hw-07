@@ -1,5 +1,5 @@
 /*filters portfolio*/
-.filters {
+.filters-list {
     display: flex;
     justify-content: center;
     padding-top: 94px;
@@ -9,16 +9,14 @@
     margin-bottom: 0px;
   }
   
-  .filters-list {
+  .filters-list__item {
     margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
   }
-  
-  .filters-list:last-child {
-    margin-right: 0px;
-  }
-  
  
-  /*portfolio*/
   .portfolio {
     display: flex;
     flex-wrap: wrap;
@@ -31,12 +29,12 @@
     margin-bottom: 94px;
   }
   
-  .portfolio img {
+  .portfolio__image {
     width: 370px;
     height: 294px;
   }
   
-  .portfolio li {
+  .portfolio__item {
     background-color: var(--white-color);
     width: 370px;
     height: 404px;
@@ -44,7 +42,7 @@
     margin-bottom: 30px;
   }
   
-  .portfolio .title {
+  .portfolio__title {
     text-align: left;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -56,45 +54,46 @@
     letter-spacing: 0.06em;
   }
   
-  .portfolio p {
+  .portfolio__description {
     text-align: left;
     font-size: 16px;
     line-height: 1.88;
   }
   
-  a.portfolio-item {
+  .portfolio__link {
     display: inline-block;
     width: 370px;
     height: 404px;
     border: 1px solid #eeeeee;
     text-decoration: none;
     color: inherit;
+
+      &:hover,
+      &:focus {
+          box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.06),
+            0 1px 1px 0 rgba(0, 0, 0, 0.12);
+        }
+
   }
-  
-  .portfolio-item:hover,
-  .portfolio-item:focus {
-    box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.06),
-      0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  }
-  
-  .portfolio-item .description {
+ 
+  .portfolio__description {
     margin: 4px 24px 20px;
   }
   
-  .portfolio li:nth-child(3n) {
+  .portfolio__item:nth-child(3n) {
     margin-right: 0px;
   }
   
-  .portfolio li:nth-last-child(-n + 3) {
+  .portfolio__item:nth-last-child(-n + 3) {
     margin-bottom: 0px;
   }
   
-  .overlay {
+  .portfolio__overlay {
     position: relative;
     overflow: hidden;
   }
   
-  .overlay-text {
+  .portfolio__text {
     position: absolute;
     content: "";
     bottom: -100%;
@@ -110,7 +109,7 @@
     transition: bottom 250ms;
   }
   
-  .portfolio-item:hover .overlay-text {
+  .portfolio__item:hover .portfolio__text {
     bottom: 0;
     transform: var(--cubic);
   }

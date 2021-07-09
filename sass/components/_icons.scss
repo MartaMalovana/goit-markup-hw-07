@@ -4,17 +4,17 @@
     padding-left: 0px;
     justify-content: center;
     padding-bottom: 30px;
-
-    & li:not(:last-child) {
-        margin-right: 10px;
-      } 
   }
   
-  .social-icon {
+.social-links__item:not(:last-child) {
+    margin-right: 10px;
+  } 
+
+.social-links__icon {
     fill: #afb1b8;
   }
   
-  .link-list {
+.social-links__link {
     display: block;
     width: 44px;
     height: 44px;
@@ -30,30 +30,30 @@
         transform: var(--cubic);
   }
   
-     &:hover .social-icon,
-     &:focus .social-icon {
+     &:hover .social-links__icon,
+     &:focus .social-links__icon {
        fill: var(--white-color);
      }
   }
   
   /*Список соц-сетей в Футере*/
    
-  .connect .social-links {
+  .social-links {
     margin: 0;
   }
   
-  .connect .link-list {
+  .social-links__link {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: background-color 250ms;
   }
   
-  .connect .social-icon {
+  .social-links__icon {
     fill: var(--white-color);
   }
   
-  .link-list:hover,
-  .link-list:focus {
+  .social-links__link:hover,
+  .social-links__link:focus {
     background-color: var(--accent-text-color);
     transform: var(--cubic);
   }

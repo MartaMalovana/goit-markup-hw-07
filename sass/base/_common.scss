@@ -10,35 +10,29 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     margin: 0px auto;
-
-    & .contacts {
-        display: flex;
-        padding-left: 0px;
-        margin: 0px 0px 0px auto;
-      }
-
-    header & {
-        display: flex;
-        justify-content: flex-start;
-        height: 80px;
-        align-items: center;
-      }
-
-    .hero & {
-        padding-top: 200px;
-        margin: 0 auto;
-      }
-
-    .advantages & {
-        margin-bottom: 94px;
-      }
-
-    footer & {
-        display: flex;
-        padding-top: 60px;
-      }
   }
-   
+  
+.container--header {
+    display: flex;
+    justify-content: flex-start;
+    height: 80px;
+    align-items: center;
+  }
+
+.container--hero {
+    padding-top: 200px;
+    margin: 0 auto;
+  }
+
+.container--advantages {
+    margin-bottom: 94px;
+  }
+
+.container--footer {
+    display: flex;
+    padding-top: 60px;
+  }
+
 ul {
     list-style: none;
   }
